@@ -3,7 +3,7 @@
 现在我们假设你已经有了一个.gguf的文件（ai.py里的model列表里）
 models文件夹我不会上传，因为它太大了，你可以自己去找一个，比如[魔塔](https://www.modelscope.cn/)或者[Hugging Face](https://huggingface.co/)
 
-在根目录下新建一个名叫modles的文件夹，把.gguf文件放进去，然后到ai.py里的第7行，改成你自己文件的名字，然后到第10行，改成model\[0\]
+在根目录下新建一个名叫models的文件夹，把.gguf文件放进去，然后到ai.py里的第7行，改成你自己文件的名字，然后到第10行，改成model\[0\]
 
 默认是开启性能测试的，每一次对话都会输出Tokens/s。
 有4套调教，默认、日常、写作、代码，默认是代码模式
