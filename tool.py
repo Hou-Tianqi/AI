@@ -90,6 +90,6 @@ def MD_to_HTML():
     except FileNotFoundError:
         print(".md文件不存在！现在没有需要转换的AI回答")
     data = markdown.markdown(data, extensions=['fenced_code', 'tables'])
-    with open(".html","w",encoding="utf-8") as f:
+    with open("a.html","w",encoding="utf-8") as f:
         f.write(data)
     os.remove(".md")

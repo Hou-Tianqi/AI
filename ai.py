@@ -24,7 +24,7 @@ if condition == "写作":
     n_ctx = 6000
 
 llm = Llama(
-    model_path=model[1], #这里是你选择model列表的第几项，一般来说填0就行
+    model_path=model[0], #这里是你选择model列表的第几项，一般来说填0就行
     n_ctx=n_ctx,
     n_threads=4, #设置为你的CPU物理核心数，注意，是物理核心数，比如我的i5 11320H是4核心8线程，所以设为4
     n_gpu_layers=0, #如果有英伟达的显卡的话可以调高，用GPU加速
