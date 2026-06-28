@@ -4,15 +4,14 @@ import time
 
 global ctext,tmpt,top_p,max_tokens,condition,llm
 
-model = ["./models/Qwen3-1.7B-Q4_K_M.gguf","./models/Qwen3.5-0.8B-Q4_K_M.gguf"]
-
+model = ["./models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf","./models/Qwen3.5-0.8B-Q4_K_M.gguf"]
 
 print("模型加载完成！")
 print("模型回答中的<think>…………</think>是深度思考的思维链")
 
 ctext = [{"role": "system", "content": "你是一个AI助手，回答要简洁，避免废话。"}]
 temperature = {"默认":{"max_tokens":512,"top_p":0.85,"tmpt":0.4},"日常":{"max_tokens":256,"top_p":0.75,"tmpt":0.4},"写作":{"max_tokens":1500,"top_p":0.8,"tmpt":0.5},"代码":{"max_tokens":None,"top_p":0.9,"tmpt":0.2}}
-condition = "日常"
+condition = "代码"
 max_tokens = temperature[condition]["max_tokens"]
 tmpt = temperature[condition]["tmpt"]
 top_p = temperature[condition]["top_p"]
