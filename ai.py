@@ -12,7 +12,7 @@ print("模型回答中的<think>…………</think>是深度思考的思维链"
 
 ctext = [{"role": "system", "content": "你是一个AI助手，回答要简洁，避免废话。"}]
 temperature = {"默认":{"max_tokens":512,"top_p":0.85,"tmpt":0.4},"日常":{"max_tokens":256,"top_p":0.75,"tmpt":0.4},"写作":{"max_tokens":1500,"top_p":0.8,"tmpt":0.5},"代码":{"max_tokens":None,"top_p":0.9,"tmpt":0.2}}
-condition = "代码"
+condition = "日常"
 max_tokens = temperature[condition]["max_tokens"]
 tmpt = temperature[condition]["tmpt"]
 top_p = temperature[condition]["top_p"]
@@ -25,7 +25,7 @@ if condition == "写作":
     n_ctx = 6000
 
 llm = Llama(
-    model_path=model[0], #这里是你选择model列表的第几项，一般来说填0就行
+    model_path=model[1], #这里是你选择model列表的第几项，一般来说填0就行
     n_ctx=n_ctx,
     n_threads=4, #设置为你的CPU物理核心数，注意，是物理核心数，比如我的i5 11320H是4核心8线程，所以设为4
     n_gpu_layers=0, #如果有英伟达的显卡的话可以调高，用GPU加速
